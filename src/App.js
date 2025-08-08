@@ -10,6 +10,8 @@ import TeenMovies from './pages/TeenMovies';
 import KidsMovies from './pages/KidsMovies';
 import SportsVideos from './pages/SportsVideos';
 import NewReleases from './pages/NewReleases';
+import PopularMovies from './pages/PopularMovies';
+import RecommendedMovies from './pages/RecommandedMovies';
 
 const App = () => {
   return (
@@ -56,6 +58,19 @@ const App = () => {
       </motion.div>
     } 
   />
+  <Route path='/popular-movies'
+  element={
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.6 }}
+    >
+      <PopularMovies />
+    </motion.div>  
+    
+  }
+  />
+  <Route path="/recommanded-movies" element={<RecommendedMovies />} />
   
   <Route path="/family-movies" element={<FamilyMovies />} />
   <Route path="/teen-movies" element={<TeenMovies />} />

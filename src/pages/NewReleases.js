@@ -8,12 +8,18 @@ const NewReleases = () => {
     { id: 3, title: 'Dangal', year: '2016', imageUrl: '/assets/image3.jpeg' },
     { id: 4, title: 'Veronica', year: '2017', imageUrl: '/assets/image4.jpg' }
   ];
-  
+  const handleGoBack = () => {
+    if (window.location.pathname === '/') {
+      window.location.reload();
+    } else {
+      window.history.back();
+    }
+  };
 
   return (
     <div className="px-4 py-8 max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold text-white mb-8 text-center">New Releases</h1>
-      <button>New Releases</button>
+      <button className='mt-1 px-6 py-3 text-1xl bg-yellow-500 rounded-full  transition duration-300 transform hover:scale-105 hover:shadow-yellow-500/50 hover:shadow-lg m-3 mx-0'onClick={handleGoBack}>Go Back</button>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {movies.map((movie) => (
           <div
